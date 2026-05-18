@@ -7,6 +7,7 @@ pydantic-settings==2.14.0
 python-dotenv==1.2.2
 python-multipart==0.0.26
 email-validator==2.3.0
-passlib[bcrypt]==1.7.4
+bcrypt==4.0.1
+passlib==1.7.4
 PyJWT==2.12.1
 google-genai==1.73.1
