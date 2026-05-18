@@ -28,6 +28,16 @@ const ForgotPassword = () => {
     }
   };
 
+  const resetPath = (() => {
+    if (!resetUrl) return '';
+    try {
+      const parsedUrl = new URL(resetUrl);
+      return `${parsedUrl.pathname}${parsedUrl.search}`;
+    } catch {
+      return resetUrl.startsWith('/') ? resetUrl : '/reset-password';
+    }
+  })();
+
   return (
     <div className="min-h-screen bg-dark-bg flex items-center justify-center p-4">
       <Link to="/" className="absolute top-8 left-8 flex items-center gap-2 text-white font-bold text-xl hover:opacity-80 transition-opacity">
@@ -41,7 +51,7 @@ const ForgotPassword = () => {
         {error && <div className="bg-red-500/10 border border-red-500/50 text-red-400 p-3 rounded-lg mb-6 text-sm">{error}</div>}
         {message && <div className="bg-green-500/10 border border-green-500/50 text-green-300 p-3 rounded-lg mb-6 text-sm">{message}</div>}
         {resetUrl && (
-          <Link to={resetUrl.replace(window.location.origin, '')} className="block bg-primary-500/10 border border-primary-500/40 text-primary-300 p-3 rounded-lg mb-6 text-sm break-words hover:bg-primary-500/20 transition-colors">
+          <Link to={resetPath} className="block bg-primary-500/10 border border-primary-500/40 text-primary-300 p-3 rounded-lg mb-6 text-sm break-words hover:bg-primary-500/20 transition-colors">
             Open reset link
           </Link>
         )}
