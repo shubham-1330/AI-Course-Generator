@@ -29,3 +29,7 @@ app.include_router(lessons.router, prefix="/api/courses", tags=["lessons"])
 @app.get("/")
 async def root():
     return {"message": f"Welcome to {settings.PROJECT_NAME}"}
+
+@app.get("/health")
+async def health_check():
+    return {"status": "ok"}
