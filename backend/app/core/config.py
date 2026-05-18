@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
     BACKEND_CORS_ORIGINS: str = "http://localhost:5173"
+    FRONTEND_URL: str = "http://localhost:5173"
 
     @property
     def cors_origins(self) -> list[str]:

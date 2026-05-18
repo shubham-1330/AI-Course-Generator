@@ -17,6 +17,13 @@ class UserCreate(UserBase):
 class UserUpdate(BaseModel):
     name: Optional[str] = None
 
+class PasswordResetRequest(BaseModel):
+    email: EmailStr
+
+class PasswordResetConfirm(BaseModel):
+    token: str
+    password: str
+
 class UserInDB(UserBase):
     id: Optional[PyObjectId] = Field(alias="_id", default=None)
     hashed_password: str

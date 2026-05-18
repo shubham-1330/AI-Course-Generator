@@ -181,6 +181,7 @@ DATABASE_NAME=course_generator_db
 GEMINI_API_KEY=your-gemini-api-key
 SECRET_KEY=change-me-to-a-long-random-secret
 BACKEND_CORS_ORIGINS=https://your-project.vercel.app
+FRONTEND_URL=https://your-project.vercel.app
 ```
 
 Frontend:
